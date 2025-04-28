@@ -1,7 +1,7 @@
-from flask import Flask, request, jsonify  # type: ignore
-from flasgger import Swagger  # type: ignore
-import joblib  # type: ignore
-import numpy as np  # type: ignore
+from flask import Flask, request, jsonify  
+from flasgger import Swagger  
+import joblib  
+import numpy as np  
 
 app = Flask(__name__)
 swagger = Swagger(app)
