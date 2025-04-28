@@ -51,8 +51,8 @@ def predict():
         predicted_crop = label_encoder.inverse_transform([prediction])[0]
 
         result = {
-            "prediction": predicted_crop,
-            "confidence": f"{confidence:.2f}%"
+            "prediction": [predicted_crop],
+            "confidence": [f"{confidence:.2f}%"]
         }
 
         return jsonify(result)
