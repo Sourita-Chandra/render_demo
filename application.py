@@ -102,7 +102,8 @@ def predict():
 
         result = {
             "prediction": [predicted_crop],
-            "confidence": [f"{confidence:.2f}%"]
+            "confidence": [round(confidence, 2)]
+
         }
 
         return jsonify(result)
