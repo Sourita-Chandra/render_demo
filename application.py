@@ -15,9 +15,16 @@ except Exception as e:
 
 REQUIRED_FIELDS = ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'moisture']
 
+# ✅ Add this route to handle GET /
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({
+        "message": "Crop Recommendation API is live!",
+        "documentation": "/apidocs"
+    }), 200
+
 @app.route('/predict', methods=['POST'])
 def predict():
-   
     data = request.get_json()
 
     if not data or "data" not in data:
